@@ -1,0 +1,70 @@
+admin:
+  password: 2kd3j4gdg4jdss43jcj23342sd234dws
+  username: forcad
+game:
+  checkers_path: /checkers/
+  default_score: 2500.0
+  env_path: ''
+  flag_lifetime: 10
+  game_hardness: 15.0
+  inflation: true
+  mode: classic
+  round_time: 60
+  start_time: 2026-03-31 23:20:00
+  timezone: Europe/Moscow
+  volga_attacks_mode: false
+storages:
+  db:
+    dbname: forcad
+    host: postgres
+    password: 2kd3j4gdg4jdss43jcj23342sd234dws
+    port: 5432
+    user: forcad
+  rabbitmq:
+    host: rabbitmq
+    password: 2kd3j4gdg4jdss43jcj23342sd234dws
+    port: 5672
+    user: forcad
+    vhost: forcad
+  redis:
+    db: 0
+    host: redis
+    password: 2kd3j4gdg4jdss43jcj23342sd234dws
+    port: 6379
+tasks:
+- checker: jerknotes/checker.py
+  checker_timeout: 20
+  checker_type: pfr
+  gets: 1
+  name: jerknotes
+  places: 1
+  puts: 1
+- checker: s3vibe/checker.py
+  checker_timeout: 20
+  checker_type: pfr
+  gets: 1
+  name: s3vibe
+  places: 1
+  puts: 1
+- checker: manka/checker.py
+  checker_timeout: 20
+  checker_type: pfr
+  gets: 1
+  name: manka
+  places: 1
+  puts: 1
+- checker: pickme-house/checker.py
+  checker_timeout: 20
+  checker_type: pfr
+  gets: 2
+  name: pickme-house
+  places: 4
+  puts: 2
+teams:
+- highlighted: false
+  ip: 10.80.1.2
+  name: MegaHuys
+- highlighted: false
+  ip: 10.80.2.2
+  name: Victor
+
