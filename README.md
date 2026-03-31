@@ -14,6 +14,8 @@
 `./ansible/roles/forcad-setup/templates/config.yml.j2`  настраиваем конфиг форкада для сервисов.
 `./ansible/roles/forcad-setup/files/checkers` закидываем чекеры
 
+
+архивы для игроков положатся в `./ansible/release`
 ## Start 
 `bash deploy.sh`
 
@@ -30,4 +32,12 @@ python3 control.py print_tokens
 python3 control.py reset
 python3 control.py setup
 python3 control.py start
+```
+
+
+открыть/закрыть сеть  (на момент деплоя открыта) 
+```
+cd ansible
+ansible-playbook close.yml
+ansible-playbook open.yml
 ```
